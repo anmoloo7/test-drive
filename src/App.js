@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, Fragment } from 'react';
+import Routes from './routes';
+import { useToasts } from 'react-toast-notifications';
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  //dont remove it
+  const store = useSelector((store) => store);
+
+  const { addToast } = useToasts();
+  if (!window.notify) {
+    window.notify = {
+      success: (message) => addToast(message, { appearance: 'success' }),
+      error: (message) => addToast(message, { appearance: 'error' }),
+      warning: (message) => addToast(message, { appearance: 'warning' }),
+      info: (message) => addToast(message, { appearance: 'info' })
+    };;
+  }
+
+
+  return (window.notify) ?
+    <Fragment>
+      <Routes />
+    </Fragment>
+    :
+    <div>Loading...</div>
+    ;
 }
 
 export default App;

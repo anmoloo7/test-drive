@@ -1,0 +1,24 @@
+:root {
+    --color-primary: #d4c96d;
+    --color-secondary: #d4c96d;
+    --color-success: #d4c96d;
+    --color-danger: #d4c96d;
+    --color-warning: #d4c96d;
+    --color-info: #d4c96d;
+    --color-light: #d4c96d;
+    --color-dark: #d4c96d;
+    --color-muted: #d4c96d;
+    --color-white: #d4c96d;
+
+
+    --background:whitesmoke;
+  }
+
+/*
+  .bg-primary {
+    background-color: black;
+  }
+  .text-primary {
+    color: black;
+  }
+*/

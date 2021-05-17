@@ -1,0 +1,19 @@
+@import url("../fonts/Inter/stylesheet.css");
+
+body {
+    background-color: var(--background);
+    font-family: Inter;
+    font-size: 12px;
+}
+
+.vcenter {
+    display: flex;
+    align-items: center;
+}
+
+.btn-primary {
+    
+}
+.btn-secondary {
+
+}
