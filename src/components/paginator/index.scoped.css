@@ -1,0 +1,53 @@
+.paginator-container {
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #6E6893;
+}
+
+.x-arrow-icons {
+    font-size: 18px;
+}
+
+.x-option-item {
+    cursor: pointer;
+    font-size: 14px;
+    width:50px;
+    text-align: center;
+    padding: 3px;
+}
+
+.x-option-item:hover {
+    background-color: silver;
+}
+
+.x-option-item-popover-body {
+    padding: 0px;
+}
+
+@media (max-width: 576px) {  
+
+}
+
+@media (max-width: 768px) {  
+    
+}
+
+@media (max-width: 992px) {  
+
+}
+
+@media (max-width: 1200px) {  
+}
+
+@media (min-width: 1200px) {  
+
+}
+ 

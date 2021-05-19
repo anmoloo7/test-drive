@@ -1,0 +1,90 @@
+
+.x-tab-heading-container {
+    border-width: 0px;
+    width:100%;
+}
+
+.x-table-heading {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.1em;
+    color: var(--color-text-primary);
+}
+
+.x-tab-options {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid silver;
+}
+
+.x-tab-heading {
+    font-family: Inter!important;
+    font-style: normal!important;
+    font-weight: 500!important;
+    font-size: 14px!important;
+    line-height: 17px!important;
+    color: var(--color-text-primary)!important;
+    background-color: unset!important;
+    border-color: transparent;
+    border-width: 0px 0px 3px!important;
+    cursor: pointer;
+}
+
+.x-tab-heading.active {
+    color: #25213B!important;
+    background-color: unset!important;
+    border-color: #25213B!important;
+    border-width: 0px 0px 3px;
+}
+
+.x-payable-amount-text {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--color-text-primary);
+    
+}
+.x-payable-amount-text > .amount {
+    color: var(--color-btn-primary);
+    font-size: 16px;
+    font-weight: 700;
+}
+.x-payable-amount-text > .currency {
+    font-size: 16px;
+}
+
+@media (max-width: 576px) {  
+
+}
+
+@media (max-width: 768px) {  
+    
+    .x-tab-options {
+        flex-wrap: wrap;
+    }
+
+    .x-payable-amount-text {
+    width: 100%;
+    text-align: right;
+    padding: 16px;
+    }
+}
+
+@media (max-width: 992px) {  
+
+}
+
+@media (max-width: 1200px) {  
+
+}
+
+@media (min-width: 1200px) {  
+
+}
+ 
