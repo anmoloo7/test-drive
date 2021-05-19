@@ -1,0 +1,67 @@
+.x-modal-header {
+    border:0;
+}
+
+
+.x-modal > .modal-content {
+    border-radius: 22px!important;
+    width: 400px!important;
+}
+
+.x-avatar-image {
+    width: 120px;
+    border-radius: 50%;
+    margin: 0px auto 20px;
+    display: inherit;
+    padding: 5px;
+    border: 2px dashed #C6C9CC;
+}
+
+label {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #6E6893;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+input[type=text] {
+   border-color: #E8E9EB;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 14px;
+   line-height: 17px;
+   display: flex;
+   align-items: center;
+   color: #3F434A;
+   border-radius:10px;
+}
+input[type=text]:disabled {
+    background-color: #ffffff;
+}
+
+.tag {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+}
+
+.green-tag {
+    width: 173px;
+    height: 29px;
+    background: #219653;
+}
+
+.red-tag {
+    width: 126px;
+    height: 29px;
+    background: #EB5757;
+}

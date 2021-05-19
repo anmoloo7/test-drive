@@ -255,7 +255,7 @@ table {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 15px 20px;
 }
 
 .x-filter-icon {
