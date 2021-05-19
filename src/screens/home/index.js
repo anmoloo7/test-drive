@@ -8,9 +8,11 @@ import { UserTable, Modals } from "../../components";
 export default function Home(props) {
     const [activeTab, setActiveTab] = useState('1');
     const [showDetails, setShowDetails] = useState(false);
+    const [showPaymentWizard, setShowPaymentWizard] = useState(true);
     return (
         <Fragment>
-            <Modals.DetailsPage isOpen={showDetails} toggle={() => setShowDetails((prev) => !prev)} />
+        <Modals.DetailsPage isOpen={showDetails} toggle={() => setShowDetails((prev) => !prev)} />
+            <Modals.PaymentWizard isOpen={showPaymentWizard} toggle={() => setShowPaymentWizard((prev) => !prev)} />
 
             <Container className="mt-5" style={{ paddingBottom: 150 }}>
                 <div className="x-table-heading">TABLE HEADING</div>
