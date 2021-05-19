@@ -333,6 +333,22 @@ table {
     color: #6E6893;
 }
 
+.x-dropdown-menu {
+    left: -130px;
+}
+
+.x-dropdown-menu > button {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    color: #25213B;
+    height:24px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 @media (max-width: 576px) {  
 
 }
