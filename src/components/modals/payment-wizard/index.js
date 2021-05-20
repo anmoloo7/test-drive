@@ -5,17 +5,17 @@ import "./index.scoped.css";
 import "./index.css";
 import Payment from "./payment";
 import CardInfo from "./cardInfo";
-import Receipt from "./cardInfo";
+import Receipt from "./receipt";
 
 export default function PaymentWizard({ isOpen, toggle, ...props }) {
-    const [step, setStep] = useState(2);
+    const [step, setStep] = useState(3);
 
     useEffect(() => {
         if (isOpen) {
-            setStep(2);
+            setStep(3);
         }
     }, [isOpen]);
-
+    
     return (
         <Fragment>
             {step === 1 &&

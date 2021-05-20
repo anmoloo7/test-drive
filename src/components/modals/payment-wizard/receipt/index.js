@@ -8,36 +8,50 @@ export default function Submission({ isOpen, toggle, ...props }) {
 
     return (
         <Modal isOpen={isOpen} toggle={toggle} className={"x-modal"}>
-            <ModalHeader className="x-modal-header" ><span className="x-modal-header-text">Make Payment</span></ModalHeader>
+            <ModalHeader className="x-modal-header" ><span className="x-modal-header-text">Submission</span></ModalHeader>
             <ModalBody>
-                <FormGroup>
-                    <Label>Tax Excluded Price</Label>
-                    <Input type="text" name="email" placeholder="" value="100" />
-                </FormGroup>
-                <FormGroup>
-                    <Label>Tax Included Price</Label>
-                    <Input type="text" name="email" placeholder="" value="100" />
-                </FormGroup>
-                <FormGroup>
-                    <Label className="w-100">Tax Rule <span className="x-new-text">Create New Tax</span></Label>
-                    <Input type="text" name="email" placeholder="" value="reginacooper@mail.com" />
-                </FormGroup>
+                <div>
+                    <div className="x-subtitle">
+                        Profile Details
+                    </div>
+                    <div>
+                        <span className="x-label">Name: </span>
+                        <span className="x-value">Regina Cooper</span>
+                    </div>
+                    <div>
+                        <span className="x-label">Email: </span>
+                        <span className="x-value">reginacooper@mail.com</span>
+                    </div>
+                    <div>
+                        <span className="x-label">Phone: </span>
+                        <span className="x-value">+1 (070) 4567–8800</span>
+                    </div>
+                </div>
 
-                <Row>
-                    <Col>
-                        <FormGroup>
-                            <Label>Unit Price</Label>
-                            <Input type="text" name="first_name" placeholder="" value="100" />
-                        </FormGroup></Col>
-                    <Col>
-                        <FormGroup>
-                            <Label>Per</Label>
-                            <Input type="number" name="last_name" placeholder="" value="1" />
-                        </FormGroup></Col>
-                </Row>
+                <div style={{ backgroundColor: "#E8E9EB", height: 1.5,marginTop:20,marginBottom:20 }}>
+                </div>
+                <div className="mb-5">
+                    <div className="x-subtitle">
+                        Payment Details
+                    </div>
+                    <div>
+                        <span className="x-label">Card Number: </span>
+                        <span className="x-value">5890 - 6858 - 6332 - 9843</span>
+                    </div>
+                    <div>
+                        <span className="x-label">Card Name: </span>
+                        <span className="x-value">Regina Cooper</span>
+                    </div>
+                    <div>
+                        <span className="x-label">Card Expiry: </span>
+                        <span className="x-value">12/2013</span>
+                    </div>
+                </div>
+
+
                 <div className="x-modal-footer">
-                    <Button color="primary" onClick={toggle} className="x-purple-btn">Next</Button>
-                    <Button color="secondary" onClick={toggle} className="x-white-btn">Cancel</Button>
+                    <Button color="secondary" onClick={toggle} className="x-white-btn">Previous</Button>
+                    <Button color="primary" onClick={toggle} className="x-purple-btn">Submit</Button>
                 </div>
             </ModalBody>
         </Modal>
