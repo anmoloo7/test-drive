@@ -1,0 +1,137 @@
+.x-modal-header {
+    border:0;
+}
+
+.x-modal-header-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    color: #3F434A;
+}
+
+
+.x-modal > .modal-content {
+    border-radius: 22px!important;
+    width: 400px!important;
+}
+
+.x-avatar-image {
+    width: 120px;
+    border-radius: 50%;
+    margin: 0px auto 20px;
+    display: inherit;
+    padding: 5px;
+    border: 2px dashed #C6C9CC;
+}
+
+label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    color: #8A9099;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+input[type=text] {
+    border-color: #E8E9EB;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    color: #3F434A;
+    border-radius:10px;
+ }
+ input[type=text]:disabled {
+     background-color: #ffffff;
+ }
+ input[type=number] {
+    border-color: #E8E9EB;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    color: #3F434A;
+    border-radius:10px;
+ }
+ input[type=number]:disabled {
+     background-color: #ffffff;
+ }
+
+.tag {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+}
+
+.green-tag {
+    width: 173px;
+    height: 29px;
+    background: #219653;
+}
+
+.red-tag {
+    width: 126px;
+    height: 29px;
+    background: #EB5757;
+}
+
+.x-modal-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.x-purple-btn {
+    background-color:#6D5BD0;
+    border-color: #6D5BD0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.x-white-btn {
+    background-color:#ffffff;
+    border-color: #E8E9EB;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #595F69;
+    margin-left: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.x-new-text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: right;
+    text-decoration-line: underline;
+    float:right;
+    color: #304FFD;
+}

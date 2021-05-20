@@ -1,0 +1,11 @@
+.x-modal > .modal-content {
+    border-radius: 3px!important;
+    width: 600px!important;
+    padding:10px;
+}
+
+.close > span {
+    background: #F8F8F8;
+    border-radius: 50%;
+    padding: 0px 6px;
+}
