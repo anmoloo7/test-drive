@@ -38,7 +38,7 @@ export default function getTableData(filters = {}) {
 
 
     if (["first_name", "last_name"].includes(filters.sortBy)) {
-        data = data.sort((a, b) => a[filters.sortBy] - b[filters.sortBy]);
+        data = data.sort((a, b) => a[filters.sortBy].localeCompare(b[filters.sortBy]));
     }
     if (["payment_date", "last_login"].includes(filters.sortBy)) {
         data = data.sort((a, b) => compareDate(a[filters.sortBy], b[filters.sortBy]));

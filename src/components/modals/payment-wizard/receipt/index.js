@@ -5,7 +5,7 @@ import "./index.scoped.css";
 import "./index.css";
 
 export default function Submission({ isOpen, toggle, ...props }) {
-
+    const [step, setStep] = props.stepState;
     return (
         <Modal isOpen={isOpen} toggle={toggle} className={"x-modal"}>
             <ModalHeader className="x-modal-header" ><span className="x-modal-header-text">Submission</span></ModalHeader>
@@ -50,7 +50,7 @@ export default function Submission({ isOpen, toggle, ...props }) {
 
 
                 <div className="x-modal-footer">
-                    <Button color="secondary" onClick={toggle} className="x-white-btn">Previous</Button>
+                    <Button color="secondary" onClick={toggle} className="x-white-btn"  onClick={()=>setStep(2)}>Previous</Button>
                     <Button color="primary" onClick={toggle} className="x-purple-btn">Submit</Button>
                 </div>
             </ModalBody>

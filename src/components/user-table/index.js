@@ -14,12 +14,13 @@ import classnames from "classnames";
 import commands from "../../commands";
 import CacheState from "../../redux/states/cache"
 
-export default function UserTable({ toggleDetailsPopup, filters, ...props }) {
+export default function UserTable({ toggleDetailsPopup, togglePaymentPopup, filters, ...props }) {
 
     const [expandedRows, setExpandedRows] = useState({});
     const [selectedRows, setSelectedRows] = useState({});
     const [data, setData] = useState([]);
     const [pagination, setpagination] = useState(undefined);
+    const [totalPaymentValue, setTotalPaymentValue] = props.totalPaymentValueState;
 
     const [page, setPage] = useState(1);
     const [perPage, setPerPage] = useState(10);
@@ -62,6 +63,17 @@ export default function UserTable({ toggleDetailsPopup, filters, ...props }) {
         }
     }
 
+    function makePayment() {
+        var keys = Object.keys(selectedRows);
+        if (keys.length < 1) {
+            window.notify.warning("Please select a record to make payment.");
+        } else if (keys.length > 1) {
+            window.notify.warning("Please select only one record to make payment.");
+        } else if (keys.length === 1) {
+            togglePaymentPopup(data[keys.pop()]);
+        }
+    }
+
     function toggleRow(rowIndex) {
         setExpandedRows((prev) => ({ ...prev, [rowIndex]: !prev[rowIndex] }));
     }
@@ -82,6 +94,14 @@ export default function UserTable({ toggleDetailsPopup, filters, ...props }) {
 
         setSelectedRows(newSelectedRows);
     }
+
+    useEffect(() => {
+        var totalvalue = 0;
+        Object.keys(selectedRows).forEach((item) => {
+            totalvalue += parseFloat(data[item].amount.substring(1));
+        });
+        setTotalPaymentValue("$" + totalvalue.toFixed(2));
+    }, [selectedRows]);
 
     return (
         <div className="x-table-card">
@@ -110,7 +130,7 @@ export default function UserTable({ toggleDetailsPopup, filters, ...props }) {
                         <Input type="text" placeholder="Search Users by Name, Email or Date" className="x-search-input" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
                     </div>
                 </span>
-                <Button className="x-payment-btn">MAKE PAYMENT</Button>
+                <Button className="x-payment-btn" onClick={() => togglePaymentPopup(data.filter((item) => item.id in selectedRows))}>MAKE PAYMENT</Button>
             </div>
             <Table responsive>
                 <thead className="x-table-heading">

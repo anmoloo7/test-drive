@@ -7,6 +7,7 @@ import "./index.css";
 
 export default function Payment({ isOpen, toggle, ...props }) {
     const [cardNumber, setCardNumber] = useState("");
+    const [step, setStep] = props.stepState;
 
     console.log("Current Number", cardNumber);
     return (
@@ -16,12 +17,12 @@ export default function Payment({ isOpen, toggle, ...props }) {
                 <FormGroup>
                     <Label>Choose payment method:</Label>
                     <div className="d-flex">
-                        <div className="x-payment-option">
+                        <div className="x-payment-option active">
                             <CustomInput type="checkbox" checked={true} />
                             <span className="ml-4">Credit Card</span>
                         </div>
-                        <div className="x-payment-option active ml-4">
-                            <CustomInput type="checkbox" checked={true} />
+                        <div className="x-payment-option  ml-4">
+                            <CustomInput type="checkbox" checked={false} />
                             <span className="ml-4">PayPal</span>
                         </div>
                     </div>
@@ -52,8 +53,8 @@ export default function Payment({ isOpen, toggle, ...props }) {
                         </FormGroup></Col>
                 </Row>
                 <div className="x-modal-footer">
-                    <Button color="secondary" onClick={toggle} className="x-white-btn">Previous</Button>
-                    <Button color="primary" onClick={toggle} className="x-purple-btn">Next</Button>
+                    <Button color="secondary" onClick={toggle} className="x-white-btn" onClick={() => setStep(1)}>Previous</Button>
+                    <Button color="primary" onClick={toggle} className="x-purple-btn" onClick={() => setStep(3)}>Next</Button>
                 </div>
             </ModalBody>
         </Modal>

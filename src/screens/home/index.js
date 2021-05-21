@@ -11,6 +11,9 @@ export default function Home(props) {
     const [showDetails, setShowDetails] = useState(false);
     const [showDetailsData, setShowDetailsData] = useState({});
     const [showPaymentWizard, setShowPaymentWizard] = useState(false);
+    const [showPaymentWizardData, setShowPaymentWizardData] = useState({});
+
+    const [totalPaymentValue, setTotalPaymentValue] = useState(0)
 
     const cacheState = CacheState.get();
 
@@ -24,10 +27,21 @@ export default function Home(props) {
         }
     }
 
+    function togglePaymentPopup(data) {
+        if (DataTransferItem) {
+            setShowPaymentWizard(true);
+            setShowPaymentWizardData(data);
+        } else {
+            setShowPaymentWizard(false);
+            setShowPaymentWizardData({});
+        }
+    }
+
+
     return (
         <Fragment>
             <Modals.DetailsPage isOpen={showDetails} toggle={() => setShowDetails((prev) => !prev)} data={showDetailsData} />
-            <Modals.PaymentWizard isOpen={showPaymentWizard} toggle={() => setShowPaymentWizard((prev) => !prev)} />
+            <Modals.PaymentWizard isOpen={showPaymentWizard} toggle={() => setShowPaymentWizard((prev) => !prev)} data={showPaymentWizardData} />
 
             <Container className="mt-5" style={{ paddingBottom: 150 }}>
                 <div className="x-table-heading">TABLE HEADING</div>
@@ -69,27 +83,27 @@ export default function Home(props) {
                                 </NavItem>
                             </Nav>
                         </span>
-                        <span className="x-payable-amount-text">Total payable amount: <span className="amount">$900.00</span><span className="currency"> USD</span></span>
+                        <span className="x-payable-amount-text">Total payable amount: <span className="amount">{totalPaymentValue}</span><span className="currency"> USD</span></span>
                     </div>
                     <TabContent activeTab={activeTab}>
                         <TabPane tabId="1">
                             <div className="mt-3" key="usertable">
-                                <UserTable toggleDetailsPopup={toggleDetailsPopup} />
+                                <UserTable toggleDetailsPopup={toggleDetailsPopup} togglePaymentPopup={togglePaymentPopup} totalPaymentValueState={[totalPaymentValue, setTotalPaymentValue]} />
                             </div>
                         </TabPane>
                         <TabPane tabId="2">
                             <div className="mt-3" key="paid">
-                                <UserTable filters={{ payment_status: "paid" }} toggleDetailsPopup={toggleDetailsPopup} />
+                                <UserTable filters={{ payment_status: "paid" }} toggleDetailsPopup={toggleDetailsPopup} togglePaymentPopup={togglePaymentPopup} totalPaymentValueState={[totalPaymentValue, setTotalPaymentValue]} />
                             </div>
                         </TabPane>
                         <TabPane tabId="3">
                             <div className="mt-3" key="unaid">
-                                <UserTable filters={{ payment_status: "unpaid" }} toggleDetailsPopup={toggleDetailsPopup} />
+                                <UserTable filters={{ payment_status: "unpaid" }} toggleDetailsPopup={toggleDetailsPopup} togglePaymentPopup={togglePaymentPopup} totalPaymentValueState={[totalPaymentValue, setTotalPaymentValue]} />
                             </div>
                         </TabPane>
                         <TabPane tabId="4">
                             <div className="mt-3" key="overdue">
-                                <UserTable filters={{ payment_status: "overdue" }} toggleDetailsPopup={toggleDetailsPopup} />
+                                <UserTable filters={{ payment_status: "overdue" }} toggleDetailsPopup={toggleDetailsPopup} togglePaymentPopup={togglePaymentPopup} totalPaymentValueState={[totalPaymentValue, setTotalPaymentValue]} />
                             </div>
                         </TabPane>
                     </TabContent>

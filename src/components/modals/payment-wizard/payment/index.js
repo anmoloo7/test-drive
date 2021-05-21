@@ -5,6 +5,7 @@ import "./index.scoped.css";
 import "./index.css";
 
 export default function Payment({ isOpen, toggle, ...props }) {
+    const [step, setStep] = props.stepState;
 
     return (
         <Modal isOpen={isOpen} toggle={toggle} className={"x-modal"}>
@@ -36,7 +37,7 @@ export default function Payment({ isOpen, toggle, ...props }) {
                         </FormGroup></Col>
                 </Row>
                 <div className="x-modal-footer">
-                    <Button color="primary" onClick={toggle} className="x-purple-btn">Next</Button>
+                    <Button color="primary" onClick={toggle} className="x-purple-btn" onClick={()=>setStep(2)}>Next</Button>
                     <Button color="secondary" onClick={toggle} className="x-white-btn">Cancel</Button>
                 </div>
             </ModalBody>
