@@ -4,6 +4,11 @@
     padding:5px;
 }
 
+.x-profile-modal > .modal-content {
+    border-radius: 22px!important;
+    width: 400px!important;
+}
+
 .close > span {
     background: #F8F8F8;
     border-radius: 50%;

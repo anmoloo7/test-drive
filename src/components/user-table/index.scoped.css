@@ -92,6 +92,17 @@ table {
     padding:3px 6px;
 }
 
+.x-user-inactive-tag {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #6E6893;
+    background: #F2F0F9;
+    border-radius: 10px;
+    padding:3px 6px;
+}
+
 .x-user-paid-tag {
     font-style: normal;
     font-weight: 500;
@@ -165,6 +176,7 @@ table {
     color: #6E6893;
     display: block;
     text-align: center;
+    cursor:pointer;
 }
 
 .x-menu-icon {

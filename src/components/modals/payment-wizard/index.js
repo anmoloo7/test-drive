@@ -8,11 +8,11 @@ import CardInfo from "./cardInfo";
 import Receipt from "./receipt";
 
 export default function PaymentWizard({ isOpen, toggle, ...props }) {
-    const [step, setStep] = useState(3);
+    const [step, setStep] = useState(1);
 
     useEffect(() => {
         if (isOpen) {
-            setStep(3);
+            setStep(1);
         }
     }, [isOpen]);
     

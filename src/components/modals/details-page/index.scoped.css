@@ -3,9 +3,9 @@
 }
 
 
-.x-modal > .modal-content {
+.x-profile-modal > .modal-content {
     border-radius: 22px!important;
-    width: 400px!important;
+    /*width: 400px!important;*/
 }
 
 .x-avatar-image {

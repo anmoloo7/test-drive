@@ -4,14 +4,29 @@ import { Container, TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, Ca
 import classnames from 'classnames';
 import "./index.scoped.css";
 import { UserTable, Modals } from "../../components";
+import CacheState from "../../redux/states/cache";
 
 export default function Home(props) {
     const [activeTab, setActiveTab] = useState('1');
     const [showDetails, setShowDetails] = useState(false);
-    const [showPaymentWizard, setShowPaymentWizard] = useState(true);
+    const [showDetailsData, setShowDetailsData] = useState({});
+    const [showPaymentWizard, setShowPaymentWizard] = useState(false);
+
+    const cacheState = CacheState.get();
+
+    function toggleDetailsPopup(data) {
+        if (DataTransferItem) {
+            setShowDetails(true);
+            setShowDetailsData(data);
+        } else {
+            setShowDetails(false);
+            setShowDetailsData({});
+        }
+    }
+
     return (
         <Fragment>
-        <Modals.DetailsPage isOpen={showDetails} toggle={() => setShowDetails((prev) => !prev)} />
+            <Modals.DetailsPage isOpen={showDetails} toggle={() => setShowDetails((prev) => !prev)} data={showDetailsData} />
             <Modals.PaymentWizard isOpen={showPaymentWizard} toggle={() => setShowPaymentWizard((prev) => !prev)} />
 
             <Container className="mt-5" style={{ paddingBottom: 150 }}>
@@ -58,18 +73,24 @@ export default function Home(props) {
                     </div>
                     <TabContent activeTab={activeTab}>
                         <TabPane tabId="1">
-                            <div className="mt-3">
-                                <UserTable />
+                            <div className="mt-3" key="usertable">
+                                <UserTable toggleDetailsPopup={toggleDetailsPopup} />
                             </div>
                         </TabPane>
                         <TabPane tabId="2">
-                            2
+                            <div className="mt-3" key="paid">
+                                <UserTable filters={{ payment_status: "paid" }} toggleDetailsPopup={toggleDetailsPopup} />
+                            </div>
                         </TabPane>
                         <TabPane tabId="3">
-                            3
+                            <div className="mt-3" key="unaid">
+                                <UserTable filters={{ payment_status: "unpaid" }} toggleDetailsPopup={toggleDetailsPopup} />
+                            </div>
                         </TabPane>
                         <TabPane tabId="4">
-                            4
+                            <div className="mt-3" key="overdue">
+                                <UserTable filters={{ payment_status: "overdue" }} toggleDetailsPopup={toggleDetailsPopup} />
+                            </div>
                         </TabPane>
                     </TabContent>
                 </div>
